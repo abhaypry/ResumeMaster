@@ -2,6 +2,12 @@ import { useState } from 'react';
 import { HeroSection } from '@/components/HeroSection';
 import { ResumeUpload } from '@/components/ResumeUpload';
 import { AnalysisResults } from '@/components/AnalysisResults';
+import { FloatingAssistant } from '@/components/FloatingAssistant';
+import { InteractiveProgress } from '@/components/InteractiveProgress';
+import { VoiceAssistant } from '@/components/VoiceAssistant';
+import { GamificationHub } from '@/components/GamificationHub';
+import { SkillRadarChart } from '@/components/SkillRadarChart';
+import { ThemeToggle } from '@/components/ui/theme-toggle';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 
@@ -54,6 +60,15 @@ const mockAnalysisData = {
   ]
 };
 
+// Mock skill data for radar chart
+const mockSkillData = [
+  { category: 'Technical', score: 85, skills: ['React', 'TypeScript', 'Node.js'] },
+  { category: 'Leadership', score: 72, skills: ['Team Management', 'Project Planning'] },
+  { category: 'Communication', score: 90, skills: ['Presentations', 'Documentation'] },
+  { category: 'Problem Solving', score: 88, skills: ['Analytics', 'Debugging'] },
+  { category: 'Creativity', score: 65, skills: ['Design Thinking', 'Innovation'] }
+];
+
 const Index = () => {
   const [currentStep, setCurrentStep] = useState<'hero' | 'upload' | 'results'>('hero');
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -82,7 +97,13 @@ const Index = () => {
   };
 
   if (currentStep === 'hero') {
-    return <HeroSection onGetStarted={handleGetStarted} />;
+    return (
+      <>
+        <HeroSection onGetStarted={handleGetStarted} />
+        <FloatingAssistant currentStep={currentStep} />
+        <VoiceAssistant currentStep={currentStep} />
+      </>
+    );
   }
 
   return (
@@ -107,19 +128,25 @@ const Index = () => {
                 AI Resume Analyzer
               </h1>
             </div>
-            <Button
-              variant="outline"
-              onClick={handleStartOver}
-              className="text-muted-foreground hover:text-foreground"
-            >
-              Start Over
-            </Button>
+            <div className="flex items-center gap-2">
+              <ThemeToggle />
+              <Button
+                variant="outline"
+                onClick={handleStartOver}
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Start Over
+              </Button>
+            </div>
           </div>
         </div>
       </header>
 
+      {/* Interactive Progress */}
+      <InteractiveProgress currentStep={currentStep} isAnalyzing={isAnalyzing} />
+
       {/* Main Content */}
-      <main className="max-w-4xl mx-auto px-6 py-12">
+      <main className="max-w-6xl mx-auto px-6 py-8">
         {currentStep === 'upload' && (
           <div className="space-y-8">
             <div className="text-center space-y-4">
@@ -146,10 +173,22 @@ const Index = () => {
                 to help you stand out to employers.
               </p>
             </div>
+            
+            {/* Gamification Hub */}
+            <GamificationHub resumeScore={mockAnalysisData.overallScore} />
+            
+            {/* Skills Radar Chart */}
+            <SkillRadarChart data={mockSkillData} />
+            
+            {/* Analysis Results */}
             <AnalysisResults analysisData={mockAnalysisData} />
           </div>
         )}
       </main>
+
+      {/* Floating Components */}
+      <FloatingAssistant currentStep={currentStep} />
+      <VoiceAssistant currentStep={currentStep} onUpload={handleUpload} />
     </div>
   );
 };
