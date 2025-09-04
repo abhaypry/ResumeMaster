@@ -1,7 +1,7 @@
 import { Brain, Zap, Target, Star, Shield, Award, CheckCircle, ArrowRight, Users, TrendingUp, Clock, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import heroImage from '@/assets/hero-workspace.jpg';
+import heroImage from '@/assets/clean-hero-bg.jpg';
 
 interface HeroSectionProps {
   onGetStarted: () => void;
@@ -17,8 +17,8 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
           className="absolute inset-0 bg-cover bg-center bg-no-repeat"
           style={{ backgroundImage: `url(${heroImage})` }}
         >
-          <div className="absolute inset-0 bg-black/60" />
-          <div className="absolute inset-0 bg-gradient-to-br from-primary/40 via-transparent to-accent/40" />
+          <div className="absolute inset-0 bg-white/10" />
+          <div className="absolute inset-0 bg-gradient-to-br from-primary/30 via-transparent to-accent/30" />
         </div>
 
         {/* Animated Background Elements */}
