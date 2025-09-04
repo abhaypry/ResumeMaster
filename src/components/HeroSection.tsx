@@ -1,7 +1,7 @@
 import { Brain, Zap, Target, Star, Shield, Award, CheckCircle, ArrowRight, Users, TrendingUp, Clock, FileText } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
-import heroImage from '@/assets/hero-image.jpg';
+import heroImage from '@/assets/hero-workspace.jpg';
 
 interface HeroSectionProps {
   onGetStarted: () => void;
@@ -222,6 +222,210 @@ export const HeroSection = ({ onGetStarted }: HeroSectionProps) => {
                     Priority improvement areas
                   </li>
                 </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-destructive/10 rounded-xl group-hover:bg-destructive/20 transition-colors">
+                    <Shield className="w-6 h-6 text-destructive" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">Privacy & Security</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Your resume data is processed securely and never stored or shared with third parties.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    End-to-end encryption
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    No data storage
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    GDPR compliant
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-primary/10 rounded-xl group-hover:bg-primary/20 transition-colors">
+                    <Brain className="w-6 h-6 text-primary" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">AI-Powered Insights</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Advanced machine learning algorithms analyze patterns from millions of successful resumes.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Industry-specific analysis
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Role-based recommendations
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Market trend insights
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-8">
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="p-3 bg-accent/10 rounded-xl group-hover:bg-accent/20 transition-colors">
+                    <Award className="w-6 h-6 text-accent" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">Expert Recommendations</h3>
+                </div>
+                <p className="text-muted-foreground mb-4">
+                  Get actionable advice based on hiring manager preferences and industry standards.
+                </p>
+                <ul className="space-y-2">
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Formatting suggestions
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Content improvements
+                  </li>
+                  <li className="flex items-center gap-2 text-sm text-muted-foreground">
+                    <CheckCircle className="w-4 h-4 text-success" />
+                    Career progression tips
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* How it Works Section */}
+      <section className="py-24 bg-muted/30">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              How It 
+              <span className="text-primary"> Works</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Get professional resume analysis in three simple steps. No registration required.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-primary/20 transition-colors">
+                  <span className="text-2xl font-bold text-primary">1</span>
+                </div>
+                <div className="absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-primary/20 to-transparent transform -translate-x-1/2 hidden md:block"></div>
+              </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Upload Resume</h3>
+              <p className="text-muted-foreground">
+                Simply drag and drop your resume file or click to browse. We support PDF, DOC, and DOCX formats.
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-20 h-20 bg-accent/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-accent/20 transition-colors">
+                  <span className="text-2xl font-bold text-accent">2</span>
+                </div>
+                <div className="absolute top-10 left-1/2 w-full h-0.5 bg-gradient-to-r from-accent/20 to-transparent transform -translate-x-1/2 hidden md:block"></div>
+              </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">AI Analysis</h3>
+              <p className="text-muted-foreground">
+                Our advanced AI analyzes your resume content, format, and ATS compatibility in under 30 seconds.
+              </p>
+            </div>
+
+            <div className="text-center group">
+              <div className="relative mb-8">
+                <div className="w-20 h-20 bg-success/10 rounded-full flex items-center justify-center mx-auto group-hover:bg-success/20 transition-colors">
+                  <span className="text-2xl font-bold text-success">3</span>
+                </div>
+              </div>
+              <h3 className="text-2xl font-semibold text-foreground mb-4">Get Results</h3>
+              <p className="text-muted-foreground">
+                Receive detailed feedback with scores, insights, and actionable recommendations to improve your resume.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Industry-Specific Features */}
+      <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
+              Tailored for
+              <span className="text-primary"> Every Industry</span>
+            </h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Our AI understands the unique requirements of different industries and career levels.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-primary/20 transition-colors">
+                  <Brain className="w-8 h-8 text-primary" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Technology</h3>
+                <p className="text-sm text-muted-foreground">
+                  Software engineering, data science, DevOps, and IT roles
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-accent/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-accent/20 transition-colors">
+                  <TrendingUp className="w-8 h-8 text-accent" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Finance</h3>
+                <p className="text-sm text-muted-foreground">
+                  Banking, investment, accounting, and financial analysis
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-warning/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-warning/20 transition-colors">
+                  <Users className="w-8 h-8 text-warning" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Marketing</h3>
+                <p className="text-sm text-muted-foreground">
+                  Digital marketing, content creation, and brand management
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card className="group hover:shadow-glow transition-all duration-300 border-border hover:border-primary/20">
+              <CardContent className="p-6 text-center">
+                <div className="w-16 h-16 bg-success/10 rounded-full flex items-center justify-center mx-auto mb-4 group-hover:bg-success/20 transition-colors">
+                  <Award className="w-8 h-8 text-success" />
+                </div>
+                <h3 className="text-lg font-semibold text-foreground mb-2">Healthcare</h3>
+                <p className="text-sm text-muted-foreground">
+                  Medical professionals, nursing, and healthcare administration
+                </p>
               </CardContent>
             </Card>
           </div>
